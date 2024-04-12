@@ -5,6 +5,9 @@ import com.hua.entity.BaseEntity;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
+import java.util.Arrays;
+import java.util.List;
+
 @Data
 @EqualsAndHashCode(callSuper = false)
 public class Video extends BaseEntity {

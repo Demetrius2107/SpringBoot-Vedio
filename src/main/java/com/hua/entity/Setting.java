@@ -1,4 +1,4 @@
-package com.hua;
+package com.hua.entity;
 
 import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableName;

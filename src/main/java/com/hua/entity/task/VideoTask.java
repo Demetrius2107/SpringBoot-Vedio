@@ -9,7 +9,7 @@ public class VideoTask {
     private Video video;
 
     //老视频
-    private Video video;
+    private Video oldVideo;
 
     //是否是新增
     private Boolean isAdd;
