@@ -1,5 +1,6 @@
 package com.hua.entity.video;
 
+import com.baomidou.mybatisplus.annotation.TableField;
 import com.hua.entity.BaseEntity;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
@@ -30,5 +31,75 @@ public class Video extends BaseEntity {
     //审核状态的消息
     private String msg;
 
+    // 审核快慢状态 0 慢速  1快速
+    private Boolean auditQueueStatus;
 
+    // 点赞数
+    private Long startCount;
+
+    // 分享数
+    private Long shareCount;
+
+    // 浏览次数
+    private Long historyCount;
+
+    // 收藏次数
+    private Long favoritesCount;
+
+    // 视频时长
+    private String duration;
+
+    // 视频分类
+    @TableField(exist = false)
+    private String videoType;
+
+    private String labelNames;
+
+    private Long typeId;
+
+    // 关联的用户
+    @TableField(exist = false)
+    private UserVO user;
+
+    // 关联分类名称
+    @TableField(exist = false)
+    private String typeName;
+
+    // 是否点赞
+    @TableField(exist = false)
+    private Boolean start;
+
+    // 是否收藏
+    @TableField(exist = false)
+    private Boolean favorites;
+
+    // 是否关注
+    @TableField(exist = false)
+    private Boolean follow;
+
+    // 用户昵称
+    @TableField(exist = false)
+    private String userName;
+
+    // 审核状态名称
+    @TableField(exist = false)
+    private String auditStateName;
+
+    // 是否公开
+    @TableField(exist = false)
+    private String openName;
+
+    public List<String> buildLabel(){
+        if (ObjectUtils.isEmpty(this.labelNames)) return Collections.EMPTY_LIST;
+        return Arrays.asList(this.labelNames.split(","));
+    }
+
+    // 和get方法分开，避免发生歧义
+    public String buildVideoUrl(){
+        return QiNiuConfig.CNAME + "/" + this.url;
+    }
+
+    public String buildCoverUrl(){
+        return QiNiuConfig.CNAME + "/" + this.cover;
+    }
 }
