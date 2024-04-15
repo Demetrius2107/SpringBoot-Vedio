@@ -1,6 +1,7 @@
 package com.hua.entity.vo;
 
 import lombok.Data;
+import org.springframework.util.ObjectUtils;
 
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
