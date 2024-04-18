@@ -46,5 +46,15 @@ public class AdminInterceptor implements HandlerInterceptor {
     }
 
 
+    private boolean response(R r, HttpServletResponse response) throws Exception{
+        response.setHeader("Access-Control-Allow-Origin", "*");
+        response.setHeader("Cache-Control", "no-cache");
+        response.setCharacterEncoding("UTF-8");
+        response.setContentType("application/json");
+        response.getWriter().println(objectMapper.writeValueAsString(r));
+        response.getWriter().flush();
+        return false;
+    }
+
 
 }
