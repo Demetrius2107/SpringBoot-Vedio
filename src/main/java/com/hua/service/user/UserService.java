@@ -1,9 +1,14 @@
 package com.hua.service.user;
 
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.IService;
 import com.hua.entity.user.User;
+import com.hua.entity.video.Type;
+import com.hua.entity.vo.*;
 
 import java.util.Collection;
+import java.util.List;
+import java.util.Set;
 
 public interface UserService extends IService<User> {
     /**
