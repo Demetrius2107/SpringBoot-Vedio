@@ -1,11 +1,15 @@
 package com.hua.entity.video;
 
 import com.baomidou.mybatisplus.annotation.TableField;
+import com.hua.config.QiNiuConfig;
 import com.hua.entity.BaseEntity;
+import com.hua.entity.vo.UserVO;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
+import org.springframework.util.ObjectUtils;
 
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 
 @Data
