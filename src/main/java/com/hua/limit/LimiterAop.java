@@ -1,6 +1,7 @@
 package com.hua.limit;
 
 import com.hua.constant.RedisConstant;
+import com.hua.exception.LimiterException;
 import com.hua.holder.UserHolder;
 import com.hua.util.RedisCacheUtil;
 
