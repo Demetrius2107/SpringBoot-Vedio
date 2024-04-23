@@ -1,4 +1,15 @@
 package com.hua.entity.json;
 
-public class CutsJson {
+import lombok.Data;
+import lombok.ToString;
+
+import java.io.Serializable;
+import java.util.List;
+
+@Data
+@ToString
+public class CutsJson implements Serializable {
+    List<DetailsJson>  details;
+    String suggestion;
+    Long offset;
 }
