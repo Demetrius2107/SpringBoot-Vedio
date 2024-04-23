@@ -8,6 +8,7 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 import org.springframework.util.ObjectUtils;
 
+import javax.validation.constraints.NotBlank;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
@@ -18,24 +19,28 @@ public class Video extends BaseEntity {
 
     private static final long serialVersionUID = 1L;
 
-    //YV ID 以YV+UUID;
+    // YV ID 以YV+UUID
     private String yv;
+
+    @NotBlank(message = "标题不能为空")
+    private String title;
+
+    private String description;
 
     private Long url;
 
     private Long userId;
 
     private Long cover;
-
     /**
-     * 公开/私密 0:公开 1:私密 默认为0
+     * 公开/私密，0：公开，1：私密，默认为0
      */
     private Boolean open;
 
-    //审核状态 通过 未通过 审核中
+    // 审核状态:通过,未通过,审核中
     private Integer auditStatus;
 
-    //审核状态的消息
+    // 审核状态的消息，当前嵌套在这里，应该有一个审核表?
     private String msg;
 
     // 审核快慢状态 0 慢速  1快速
@@ -109,4 +114,6 @@ public class Video extends BaseEntity {
     public String buildCoverUrl(){
         return QiNiuConfig.CNAME + "/" + this.cover;
     }
+
+
 }
