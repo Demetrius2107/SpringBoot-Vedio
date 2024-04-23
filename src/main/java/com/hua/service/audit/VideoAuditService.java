@@ -6,4 +6,8 @@ import org.springframework.stereotype.Service;
 @Service
 public class VideoAuditService extends AbstractAuditService<String, AuditResponse>{
 
+    @Override
+    public AuditResponse audit(String task) {
+        return null;
+    }
 }

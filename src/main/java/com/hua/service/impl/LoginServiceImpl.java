@@ -5,6 +5,7 @@ import com.hua.entity.user.User;
 import com.hua.entity.vo.FindPWVO;
 import com.hua.entity.vo.RegisterVO;
 import com.hua.service.LoginService;
+import com.hua.service.user.UserService;
 import org.springframework.stereotype.Service;
 
 import javax.servlet.http.HttpServletResponse;
@@ -14,7 +15,7 @@ import java.io.IOException;
 public class LoginServiceImpl  implements LoginService {
 
 
-    private UserService
+    private UserService userService;
 
 
     @Override
